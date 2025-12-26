@@ -1,18 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header";
-import { UserComponent } from './user/user';
+import { Component } from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
-import { TasksComponent } from './tasks/tasks';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, UserComponent,TasksComponent,CommonModule],
+  standalone:false,
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class AppComponent {
   users = DUMMY_USERS;
  selectedUserId = 'u1';
 
