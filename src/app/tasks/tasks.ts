@@ -1,14 +1,9 @@
 import { Component, inject, Input } from '@angular/core';
-import { TaskComponent } from "./task/task";
-import { CommonModule } from '@angular/common';
-import { DUMMY_TASKS } from '../dummy-tasks';
-import { NewTaskComponent } from './new-task/new-task';
 import { TaskService } from './task/task.service';
 
 @Component({
   selector: 'app-tasks',
-  standalone:true,
-  imports: [TaskComponent,CommonModule,NewTaskComponent],
+  standalone:false,
   templateUrl: './tasks.html',
   styleUrl: './tasks.css',
 })
@@ -23,7 +18,7 @@ export class TasksComponent {
   get SelectedUserTasks(){
         return this.taskService.getTasks(this.userId);
   }
-  
+
   onCompleteTask(id: number) {
     this.taskService.removeTask(id);
   }

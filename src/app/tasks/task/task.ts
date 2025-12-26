@@ -3,11 +3,11 @@ import { Task } from './task.model';
 import { CardComponent } from "../../shared/card/card";
 import { DatePipe } from '@angular/common';
 import { TaskService } from './task.service';
+import { flatMap } from 'rxjs';
 
 @Component({
   selector: 'app-task',
-  imports: [CardComponent,DatePipe],
-  standalone:true,
+  standalone:false,
   templateUrl: './task.html',
   styleUrl: './task.css',
 })
